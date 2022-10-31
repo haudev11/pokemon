@@ -40,6 +40,7 @@ for (let i = 1; i <= 100; i++){
         if (countTotal == 0)
         {
           winDiv.style.display = "block"
+          clearInterval(timecontrol);
         }
         checked = 0;
       } else{
