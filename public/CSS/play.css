@@ -112,6 +112,40 @@ a{
   visibility: hidden;
 }
 
+#time {
+  font-size: 30px;
+  margin: auto;
+}
+
+.win {
+  position: absolute;
+  top: 200px;
+  height: 40%;
+  width: 100%;
+  background-color: rgba(0, 234, 0, 0.7);
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.result-text {
+  color: black;
+  font-size: 800%;
+  opacity: 1;
+  user-select: none;
+}
+
+.lose {
+  position: absolute;
+  top: 200px;
+  height: 40%;
+  width: 100%;
+  background-color: rgba(0245, 0, 0, 0.7);
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+
 footer {
     text-align: center;
     padding: 3px;

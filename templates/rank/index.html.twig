@@ -25,10 +25,14 @@
                     <img src="/pictures/International_Pokémon_logo.svg.png" alt="logo" />
                 </a>
                 <div class="dropdown">
-                    <a class="btn-dropdown" href="{{path('app_play')}}">PLAY</a>
+                {% if app.user %}
+                    <a class="btn-dropdown" href="{{path('app_play')}}">PLAY</a> 
+                {% else %}
+                  <a class="btn-dropdown" href="{{path('app_login')}}">PLAY</a>
+                {% endif %} 
                 </div>
                 <div class="dropdown">
-                    <a class="btn-dropdown" href="{{path('app_rank')}}">RANK</a>
+                    <a class="btn-dropdown" href="{{path('app_rank')}}">LIST USERS</a>
                 </div>  
                 <div class="dropdown">
                     <a class="btn-dropdown" href="{{path('app_policy')}}">POLICY</a>
@@ -53,7 +57,7 @@
         </div>
     </nav>
     <div class="title">
-        The Ranking   
+        List Users   
     </div>
     <table>
         <tr>
