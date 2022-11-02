@@ -39,6 +39,10 @@ for (let i = 1; i <= 100; i++){
         countTotal--;
         if (countTotal == 0)
         {
+          let xhr = new XMLHttpRequest();
+          let url = "http://localhost:8000/game/win";
+          xhr.open('GET', url, true);
+          xhr.send();
           winDiv.style.display = "block"
           clearInterval(timecontrol);
         }
@@ -68,6 +72,10 @@ let timecontrol = setInterval(function(){
   } 
   if(minuteValue < 0)
   {
+    let xhr = new XMLHttpRequest();
+    let url = "http://localhost:8000/game/lose";
+    xhr.open('GET', url, true);
+    xhr.send();
     loseDiv.style.display = "block"
     clearInterval(timecontrol)
   }

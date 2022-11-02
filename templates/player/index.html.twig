@@ -15,6 +15,32 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="/CSS/player.css">
+
+    <style>
+
+        .games_t 
+            {
+                width: 200px;
+                height: 300px;
+                border: 1px solid black;
+                margin: auto;
+            }
+        .row{
+            width: 100%;
+            height: 30px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border: 1px solid black;
+        }
+        .win {
+            color: green;
+        }
+        .lose {
+            color: red;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -63,13 +89,31 @@
     <div class="police-text">
         <div class="text">
              <h1>Your Name: {{ app.user.username }}</h1>
-        
-        <br>
-        <b>Email: {{ app.user.Email }}</b>
+            <b>Email: {{ app.user.Email }}</b>
         </div>
-        
+        <div class="games_t">
+            <div class="row">
+                <div class="time_t">Time</div>
+                <div class="result_t">Result</div>
+            </div>
+            {% for game in games %}
+                <div class="row">
+                    <div class="time_t">{{ game.gameAt}} </div>
+                    {% if game.result %}
+                        <div class="result_t win">Win</div>
+                    {% else %}
+                        <div class="result_t lose">Lose</div>
+                    {% endif %}
+                </div>
+            {% endfor %}
         </div>
     </div>
+    
+
+
+
+
+
     
     <footer>
         <div class="footer-content">
